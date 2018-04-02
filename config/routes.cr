@@ -3,6 +3,7 @@ Amber::Server.configure do |app|
     # Plug is the method to use connect a pipe (middleware)
     # A plug accepts an instance of HTTP::Handler
     plug Amber::Pipe::PoweredByAmber.new
+    plug Amber::Pipe::BeforeHeaders.new
     # plug Amber::Pipe::ClientIp.new(["X-Forwarded-For"])
     plug Citrine::I18n::Handler.new
     plug Amber::Pipe::Error.new
