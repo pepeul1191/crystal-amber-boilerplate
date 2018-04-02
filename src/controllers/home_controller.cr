@@ -1,16 +1,12 @@
+require "../helpers/home_helper"
+
 class HomeController < ApplicationController
   include Helper::Application
-
+  include Helper::Home
   def index
     @hola = "mundo"
-    @css = [
-      "bower_components/bootstrap/dist/css/bootstrap.min",
-      "bower_components/font-awesome/css/font-awesome.min",
-    ]
-    @js = [
-      "bower_components/jquery/dist/jquery.min",
-      "bower_components/bootstrap/dist/js/bootstrap.min",
-    ]
+    @css = [] of String; @css = index_css
+    @js = [] of String; @js = index_js
     render("index.html.ecr", layout: "blank.html.ecr")
   end
 end
