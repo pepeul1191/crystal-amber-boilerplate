@@ -2,9 +2,9 @@ module Helper
   module Application
     def load_css(csss)
       rpta = ""
-      if csss != nil
+      if csss
         csss.each do |css|
-          temp = "<link href='" + CONSTANTS["static_url"] + css + ".css' rel='stylesheet'/>"
+          temp = "<link href='" + CONSTANTS["static_url"].to_s + css + ".css' rel='stylesheet'/>"
           rpta = rpta + temp
         end
       end
